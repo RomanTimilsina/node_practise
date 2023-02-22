@@ -14,13 +14,32 @@
 
 }
 
+.poll__option--selected .poll__option-fill{
+  background: #009578;
+}
+
+.poll__option--selected .poll__option-info{
+  font-weight: bold;
+}
+
 .poll__option-fill{
   width: 50%;
   height: 10px;
   background: #dddddd;
 }
 
+.poll__option:hover{
+  cursor: pointer;
+}
+
+.poll__option:not(:last-child){
+  margin-bottom: 0.5rem;
+}
+
+
 .poll__option-info{
   display: flex;
   justify-content: space-between;
+  padding: 0.5rem 0;
+  font-size: 0.85rem;
 }

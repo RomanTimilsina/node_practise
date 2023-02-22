@@ -8,6 +8,11 @@ const dataFile = path.join(__dirname, 'data.json');
 //Support POSTing form data with urlencode
 app.use(express.urlencoded({extended:true}))
 
+app.use((req,res,next) => {
+  res.setHeader("Access-Control-Allow-Origin","*");
+  next();
+})
+
 app.get('/poll', async (req, res) => {
   let data = JSON.parse(await fs.readFile(dataFile, 'utf-8'));
   const TotalVotes = Object.values(data).reduce((total,n) => total += n,0)
